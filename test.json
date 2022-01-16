@@ -1,6 +1,6 @@
-{"emp_id": "censor",
-"first_name": "censor",
-"last_name": "censor",
-"email": "censor",
-"gender":"censor",
-"age":"censor"}
+{"emp_id": 1,
+"first_name": 2,
+"last_name": 2,
+"email": 1,
+"gender": 1,
+"age": 1}

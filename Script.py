@@ -1,36 +1,45 @@
 import pandas
 import json
 import csv
-#open MOCK_DATA.csv file and read first row into list header
-df = pandas.read_csv('MOCK_DATA.csv', header=0)
-#create a dictionary of df.columns as keys and values as empty lists
+import functions
+
+#open MOCK_DATA.csv file read it and store it in a variable
+df = pandas.read_csv('MOCK_DATA.csv')
+
+#create a dictionary for censored values
 censored_values = {}
+
+#create a dictionary for switch case
+switcher = {1 : "censor",
+            2 : "pseudonymization"}
+
+#class for function calls
+class calls:
+    def censor(column):
+        censored_values[column] = functions.functions.censor(df[column].tolist())
+
+    def pseudonymization(column):
+        censored_values[column] = functions.functions.pseudonymization(df[column], column)
+
+#switch case for calling functions
+def switch(arg, column):
+    getattr(calls , switcher.get(arg))(column) #gets the function name from dictionary based on arg and calls it
+
 #create a json reader to read test.json file
 with open('test.json') as json_file:
     json_data = json.load(json_file)
    
-class functions:    
-    def censor(col):
-        #read values from column and store in list
-        values = df[col].tolist()
-        #replace values with '*'
-        for i in range(len(values)):
-            values[i] = '*'
-        censored_values[col] = values
-
+#code block to check if any function applies to column
 for column in df.columns:
     if column in json_data.keys():
-        call = getattr(functions, json_data.get(column))
-        call(column)
+        switch(json_data.get(column),column)
     else:
         censored_values[column] = df[column].tolist()
 
-
+#write the censored values to a csv file
 file = open('censored_values.csv', 'w')
 writefile = csv.writer(file)
-#convert censored_values dictionary to dataframe and write to csv
 df_censored = pandas.DataFrame.from_dict(censored_values)
 df_censored.to_csv('censored_values.csv')
 file.close()
-
 
