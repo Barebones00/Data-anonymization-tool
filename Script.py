@@ -8,7 +8,6 @@ censored_values = {}
 #create a json reader to read test.json file
 with open('test.json') as json_file:
     json_data = json.load(json_file)
-#check if df.colums is in json_data
    
 class functions:    
     def censor(col):
