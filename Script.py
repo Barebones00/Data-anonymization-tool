@@ -19,7 +19,7 @@ class calls:
         censored_values[column] = functions.functions.censor(df[column].tolist())
 
     def pseudonymization(column):
-        censored_values[column] = functions.functions.pseudonymization(df[column], column)
+        censored_values[column] = functions.functions.pseudonymization(df[column].tolist(), column)
 
 #switch case for calling functions
 def switch(arg, column):
