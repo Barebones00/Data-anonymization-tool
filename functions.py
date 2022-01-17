@@ -17,4 +17,16 @@ class functions:
                 values[i] = names.get_last_name()
         return values
         
+    def shuffle(values):
+        import random
+        #random.shuffle(values)
+        for i in range(len(values)-1, 0, -1):
+     
+             # Pick a random index from 0 to i
+            j = random.randint(0, i + 1)
+            # Swap arr[i] with the element at random index
+            values[i], values[j] = values[j], values[i]
+        return values
     
+    #def scramble(values):
+        
