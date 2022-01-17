@@ -24,6 +24,7 @@ class calls:
 
     def shuffle(column):
         censored_values[column] = functions.functions.shuffle(df[column].tolist())
+
 #switch case for calling functions
 def switch(arg, column):
     getattr(calls , switcher.get(arg))(column) #gets the function name from dictionary based on arg and calls it
