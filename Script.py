@@ -12,7 +12,8 @@ censored_values = {}
 #create a dictionary for switch case
 switcher = {1 : "censor",
             2 : "pseudonymization",
-            3 : "shuffle"}
+            3 : "shuffle",
+            4 : "scramble"}
 
 #class for function calls
 class calls:
@@ -24,6 +25,9 @@ class calls:
 
     def shuffle(column):
         censored_values[column] = functions.functions.shuffle(df[column].tolist())
+
+    def scramble(column):
+        censored_values[column] = functions.functions.scramble(df[column].tolist())    
 
 #switch case for calling functions
 def switch(arg, column):

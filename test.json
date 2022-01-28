@@ -4,4 +4,5 @@
 "email": 1,
 "gender": 1,
 "age": 1,
-"salary":3}
+"salary":3,
+"street_address": 4}
