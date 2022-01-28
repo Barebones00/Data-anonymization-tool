@@ -2,54 +2,47 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <style>
-.container {
-vertical-align: middle;
-width: 200px;
-margin: 0 auto;
-display: inline;}
 
-.dropdown {
-width: 200px;
-margin: 0 auto;
-display: inline;}
+h2 {text-align: center;}
+body {
+  font: 400 1.4rem 'Lato', Verdana, Helvetica, sans-serif;
+}
+
+.btn-change{
+    height: 50px;
+    width: 100px;
+    background: lightseagreen;
+    margin: 20px;
+    box-shadow: 0 0 1px #ccc;
+    border: 0px;
+    color: #fff;
+}
+.btn-change:hover{
+    background: #31708f;
+    
+}
 
 </style>
 </head>
 <body>
-
-<div class="container">
-<div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" id="button" data-toggle="dropdown">Column Name
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">ID</a></li>
-      <li><a href="#">first-name</a></li>
-      <li><a href="#">last-name</a></li>
-	  <li><a href="#">email</a></li>
-      <li><a href="#">gender</a></li>
-      <li><a href="#">job-title</a></li>
-	  <li><a href="#">salary</a></li>
-      <li><a href="#">street address</a></li>
-      <li><a href="#">phone no</a></li>
-	  <li><a href="#">age</a></li>
-      
-    </ul>
-</div>
-<div class="dropdown">	
-	
-	<button class="btn btn-primary ml-3 dropdown-toggle" type="button" id="button" data-toggle="dropdown">Anon Technique
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Censor</a></li>
-      <li><a href="#">Pseudonymize</a></li>
-      <li><a href="#">Shuffle</a></li>
-    </ul>
-</div>  
-</div>
+  
+  <div class="container">
+    <div class="row">
+      <h2>Big Data Anonymizer</h2>
+      <p>This tool is aimed at anonymizing data in order to ensure privacy or carry out any form of data hiding. Simply upload the fields which you want to anonymize 
+        in the form of <b>JSON</b>, along with <b>CSV</b> file containing all the rows of data. Upon doing so, click <b>Anonymize</b> and the algorithm will anonymize the 
+        required fields and give you the desired output. 
+      </p>
+      Select JSON: <button class="btn-change">Upload JSON </button><br>
+      Select CSV:  <button class="btn-change">Upload CSV </button><br>
+      Anonymize File:<button class="btn-change">Anonymize </button>
+          
+    </div>
+  </div>
 
 
 </body>
