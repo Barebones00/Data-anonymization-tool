@@ -34,6 +34,5 @@ class functions:
         for i in range(len(values)):
             string_word=str(values[i])
             
-            values[i] = ''.join(random.sample(string_word, len(string_word)))
-            
+            values[i] = ''.join(random.sample(string_word, len(string_word)))    
         return values
