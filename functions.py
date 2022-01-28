@@ -1,12 +1,9 @@
 class functions:    
-
-    
     def censor(values):
         for i in range(len(values)):
             values[i] = '*'
         return values
     
-
     def pseudonymization(values, column_name):
         import names
         if column_name == 'first_name':
@@ -19,8 +16,7 @@ class functions:
             for i in range(len(values)):
                 values[i] = names.get_last_name()
         return values
-
-
+        
     def shuffle(values):
         import random
         #random.shuffle(values)
@@ -39,8 +35,5 @@ class functions:
             string_word=str(values[i])
             
             values[i] = ''.join(random.sample(string_word, len(string_word)))
-            print (values[i])
-        return values    
-
-
-        
+            
+        return values
